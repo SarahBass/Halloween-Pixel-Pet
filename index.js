@@ -132,6 +132,7 @@ if (userActivity.adjusted.steps > goals.steps){background.image = "Gameover.jpeg
   if (petnaughty <= 0){petnaughty = 0;}
   
   //Sleeping increases cuteness level of form
+ 
   if (basic >= 100){basic = 100;}
   if (basic <= 0){basic = 0;} 
   
@@ -239,11 +240,14 @@ pet.image =  "pet/"+ pets + "v" + version + "a" + seconds%2 + ".png";
   
   function showPoop(){
     
+     if (poops > 0){petnaughty++;
+                   basic--;}
+    
     //clear poops by moving wrist
     if (poops > 0){
     if (Accelerometer) {
    //console.log("Poop Level: " + poops);
-   //console.log("Naughty Level: " + petnaughty);
+  // console.log("Naughty Level: " + petnaughty);
    //console.log("Basic Level: " + basic);
    const accelerometer = new Accelerometer({ frequency: 30, batch: 60 });
    accelerometer.addEventListener("reading", () => { 
@@ -299,10 +303,10 @@ button1.onclick = function(evt) { buttonnumber++; }
                     heartlabel.class  = "labelseeblue";
                     stairslabel.class  = "labelseeblue";
                     evolution.class = "none";
+                    stepsLabel.class = "labelwhite";
                     basic++;
                     petnaughty--;
-                      if (seconds % 2 == 0){object.image = "read.jpeg";}
-                      else{object.image = "read1.jpeg";}
+                    object.image = "read" + seconds%2 + ".jpeg";
   }else{
                     buttonnumber = 0;
                     distancelabel.class = "none";
@@ -312,6 +316,7 @@ button1.onclick = function(evt) { buttonnumber++; }
                     stairslabel.class  = "none";
                     object.image = "blank.png";
                     evolution.class = "meter";
+                   stepsLabel.class = "labelpurple";
     
   }
   }
