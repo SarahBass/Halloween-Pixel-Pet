@@ -1,6 +1,6 @@
 /*
 ----------------------------------------------
- *  Project:   Pixel Pet Clock Face RETRO
+ *  Project:   Pixel Pet Clockface Halloween
  *  Mail:       darahbass@gmail.com
  *  Github:     SarahBass
  ---------------------------------------------
@@ -264,11 +264,11 @@ pet.image =  "pet/"+ pets + "v" + version + "a" + seconds%2 + ".png";
     
       //Change animation in background to show game over or pet waste
   if (userActivity.adjusted.steps < goals.steps/5){
-    poop.image ="poop/snakev" + poops+ seconds%2 + ".png";
+    poop.image ="poop/snakev" + poops+"a"+ seconds%2 + ".png";
   }
   else if ((userActivity.adjusted.steps > goals.steps/5) &&  (userActivity.adjusted.steps < goals.steps)){
  
-    poop.image = "poop/poopv" + poops+ seconds%2 + ".png";
+    poop.image = "poop/poopv" + poops+ "a"+seconds%2 + ".png";
   
   }else if (userActivity.adjusted.steps >= goals.steps){ poop.image = "poop/gameover"+seconds%2+".png";}
 else {poop.image = "blank.png";}
