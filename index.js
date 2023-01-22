@@ -63,7 +63,8 @@ const boltlabel = document.getElementById("boltlabel");
 const heartlabel = document.getElementById("heartlabel");
 const stairslabel = document.getElementById("stairslabel");
 const distancelabel = document.getElementById("distancelabel");
-const button1 = document.getElementById("button-1");
+const button2 = document.getElementById("button-1");
+const button1 = document.getElementById("button-2");
 var demoinstance = document.getElementById("demoinstance");
 var demogroup = demoinstance.getElementById("demogroup");
 
@@ -128,19 +129,24 @@ if (userActivity.adjusted.steps > goals.steps){background.image = "Gameover.jpeg
   if (poops > 3){poops = 3}
   
   //Not Cleaning makes Pet Naughty
-  if ( petnaughty >= 100){petnaughty = 100;}
-  if (petnaughty <= 0){petnaughty = 0;}
+  if ( petnaughty > 100){petnaughty = 100;}
+  if (petnaughty < 0){petnaughty = 0;}
   
   //Sleeping increases cuteness level of form
  
-  if (basic >= 100){basic = 100;}
-  if (basic <= 0){basic = 0;} 
+  if (basic > 100){basic = 100;}
+  if (basic < 0){basic = 0;} 
   
  //Reset stats at midnight
 if ((util.zeroPad(hours) == 0)&& (minutes == 1)){
   petnaughty = 0;
   poops = 0;
   basic = 0;}
+  
+  if (poops <= 0){button2.onclick = function(evt) { 
+   petnaughty - 20;
+    //console.log("Naughty Level: " + petnaughty);
+   poop.image = "poop/heart0.png"; }}
   
   //--------------CHANGE PET FORM IN FOREGROUND ------------------
   
@@ -305,7 +311,6 @@ button1.onclick = function(evt) { buttonnumber++; }
                     evolution.class = "none";
                     stepsLabel.class = "labelwhite";
                     basic++;
-                    petnaughty--;
                     object.image = "read" + seconds%2 + ".jpeg";
   }else{
                     buttonnumber = 0;
