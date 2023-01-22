@@ -143,10 +143,11 @@ if ((util.zeroPad(hours) == 0)&& (minutes == 1)){
   poops = 0;
   basic = 0;}
   
-  
+  //Button to show heart
    button2.onclick = function(evt) { 
-   petnaughty - 20;
-    //console.log("Naughty Level: " + petnaughty);
+   petnaughty-=20;
+   console.log("Basic Level: " + basic);
+   console.log("Naughty Level: " + petnaughty);
    poop.image = "poop/heart0.png"; }
   
   //--------------CHANGE PET FORM IN FOREGROUND ------------------
