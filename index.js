@@ -124,8 +124,8 @@ if (userActivity.adjusted.steps > goals.steps){background.image = "Gameover.jpeg
   
  //Pet creates waste based on steps 
   if ((userActivity.adjusted.steps%25) == 0){poops++;}
-  if (poops <= 0 ) {poops = 0;}
-  if (poops >= 5){poops = 5}
+  if (poops < 0 ) {poops = 0;}
+  if (poops > 3){poops = 3}
   
   //Not Cleaning makes Pet Naughty
   if ( petnaughty >= 100){petnaughty = 100;}
